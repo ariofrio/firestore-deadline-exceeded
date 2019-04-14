@@ -7,6 +7,7 @@ npm run start
 It gets stuck here:
 
 ```
+<...>
 user added: tuya:email:bha<REDACTED>
 processing device: tuya:email:bha<REDACTED> / <REDACTED>
 user processed: tuya:email:bha<REDACTED>

@@ -28,11 +28,15 @@ firebase
         for (const device of devices.docs) {
           console.log(`processing device: ${change.doc.id} / ${device.ref.id}`)
 
+          // Comment this out to get rid of deadline exceeded errors.
+          device.ref.collection('alarms').onSnapshot(() => {})
+
           await device.ref.set(
             { _privateDeadlineExceededTest: false },
             { merge: true },
           )
         }
+        console.log(`user processed: ${change.doc.id}`)
       }
     }
   })

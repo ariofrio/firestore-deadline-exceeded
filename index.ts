@@ -5,9 +5,9 @@ const firebase = admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: 'https://rectecgrills-app.firebaseio.com',
 })
-admin.firestore.setLogFunction((log) => {
-  console.log(log)
-})
+// admin.firestore.setLogFunction((log) => {
+//   console.log(log)
+// })
 
 console.log('starting')
 firebase
@@ -27,7 +27,7 @@ firebase
           .get()
         for (const device of devices.docs) {
           console.log(`processing device: ${change.doc.id} / ${device.ref.id}`)
-          device.ref.collection('alarms').onSnapshot(() => {})
+
           await device.ref.set(
             { _privateDeadlineExceededTest: false },
             { merge: true },

@@ -39,4 +39,5 @@ firebase
         console.log(`user processed: ${change.doc.id}`)
       }
     }
+    process.exit()
   })

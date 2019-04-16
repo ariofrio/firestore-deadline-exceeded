@@ -13,7 +13,7 @@ console.log('starting')
 firebase
   .firestore()
   .collection('_privateUsers')
-  .limit(100)
+  .limit(200)
   .onSnapshot(async (snapshot) => {
     console.log('snapshot')
     for (const change of snapshot.docChanges()) {
